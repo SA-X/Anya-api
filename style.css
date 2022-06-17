@@ -1,0 +1,88 @@
+#barra{
+    background: linear-gradient(135deg, #5c9ec4a1, #7abfb4a1, #d9618da1);
+    padding: 0;
+}
+
+#titulo{
+    font-family: 'Tangerine', cursive;
+    font-size: 2.8em;
+    color: #D9618D;
+}
+
+#dropDown{
+    background: linear-gradient(270deg, #5c9ec4d3, #7abfb4d3);
+}
+
+.space{
+    height: 4em;
+    background-color: #203d5b;
+}
+
+#content, #formSection{
+    background-color: #203d5b;
+}
+
+#welcome{
+    font-family: 'Oleo Script', cursive;
+    font-size: 4em;
+}
+
+.texto {
+    background: -webkit-linear-gradient(315deg,#5c9ec4, #7abfb4, #d9618d);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: tomato;  
+}
+
+#sectFoot{
+    background: linear-gradient(270deg, #d9618da1, #e79bb7a1);
+}
+
+#foot{
+    position: static;
+    bottom: 0%;
+}
+
+#copy{
+    background: linear-gradient(270deg, #7abfb3a1,  #5c9ec4a1);
+    color: #D9618D;
+    font-weight: 700;
+}
+
+.copyLink{
+    text-decoration: none;
+    color: #D9618D;
+    font-weight: 400;
+}
+
+#formReg, #datos{
+    background: linear-gradient(225deg, #7abfb4, #d9618d);
+    border-radius: 15px;
+}
+
+#paint, #btnCancelar{
+    background: linear-gradient(225deg, #7abfb4d0, #d9618dd0);
+}
+
+#reg, #btnGuardar, #btnAgregar, #modificar{
+    background: linear-gradient(to left top, #5C9EC4, #7ABFB3);
+}
+
+iframe{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#tabla{
+    background: linear-gradient(270deg, #5c9ec4d3, #7abfb4d3);
+}
+
+#tite{
+    color: #203d5b;
+    font-size: 3em;
+}
+
+#formSpace{
+    background: linear-gradient(270deg, #7abfb3a1,  #5c9ec4a1);
+}
