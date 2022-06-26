@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANYA</title>
+    <link rel="shortcut icon" href="Imagenes/Anya-Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Frameworks de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</head>
+
+<body onload="cargarDatos()">
+
+    <!-- Barra de navegación -->
+    <nav id="barra" class="navbar navbar-expand-lg bg-light fixed-top">
+        <!-- Títutlo de la página -->
+        <div class="container-fluid">
+            <a id="titulo" class="navbar-brand p-0" href="index.html">
+                Anya
+            </a>
+            <!-- Responsive de la navbarr -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Items de la barra -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="space"></div>
+
+    <div id="formSection" class="container-fluid m-0 py-2 pt-2 text-light">
+        <!-- Formulario -->
+        <h1 id="welcome" class="text-center display-1">
+            Bienvenidos a Anya
+        </h1>
+        <section id="seccionFormulario" class="p-2 d-none">
+            <form action="#" class="row g-3 pb-3 vw-10 m-auto rounded-5" id="formSpace">
+                <!-- Nombre -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+                </div>
+                <!-- Nombre de Usuario -->
+                <div class="col-12 col-md-6 cmb-3">
+                    <label for="user" class="form-label">Nombre de Usuario</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                        <input type="text" class="form-control" id="user" placeholder="Usuario"
+                            aria-describedby="inputGroupPrepend2">
+                    </div>
+                </div>
+                <!-- Rol -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="rol" class="form-label">Rol</label>
+                    <select class="form-select" id="rol">
+                        <option selected disabled value="">Seleccionar</option>
+                        <option>Administrador</option>
+                        <option>Moderador</option>
+                        <option>Tester
+                        </option>
+                    </select>
+                </div>
+                <!-- Botones de acción -->
+                <div class="col-12 col-md-6 col-lg-4 mb-3 pt-lg-2">
+                    <!-- Guardar -->
+                    <input type="button" class="btn mt-lg-4" id="btnGuardar" value="Guardar">
+                    <!-- Cancelar -->
+                    <input type="button" class="btn mt-lg-4" id="btnCancelar" value="Cancelar">
+                </div>
+            </form>
+        </section>
+
+        <!-- Tabla de datos -->
+        <section id="datos" class="row py-2 mx-0 rounded-4">
+            <h3 id="tite" class="text-center">
+                <strong id="title">Lista de encargados</strong>
+            </h3>
+            <div class="col-12">
+                <input type="button" class="btn" id="btnAgregar" value="Agregar">
+            </div>
+            <div class="col-12 table-responsive datos container-fluid pt-2 text-light text-center">
+                <table id="tblDatos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Nombre de Usuario</th>
+                            <th scope="col">rol</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdDatos"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="adminApp.js"></script>
+
+    <!-- Footer -->
+    <div id="foot" class="container-fluid p-0 m-0">
+        <footer class="text-center text-lg-start text-dark">
+            <!-- Secciones -->
+            <section id="sectFoot" class="pt-1">
+                <div class="container-fluid text-center text-md-start mt-2">
+                    <div class="row mt-3">
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+                            <!-- Contenido -->
+                            <h6 class="text-uppercase fw-bold">Integrantes</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                Gabriel Argel <br>
+                                María Díaz
+                            </p>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+                            <h6 class="text-uppercase fw-bold">Contacto</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+                            <p>
+                                New York, NY 10012, US <br>
+                                info@example.com <br>
+                                + 01 234 567 88 <br>
+                                + 01 234 567 89
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Copyright -->
+            <div id="copy" class="text-center p-2">
+                <span>
+                    © 2020 Copyright:
+                    <a class="copyLink" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                </span>
+            </div>
+        </footer>
+    </div>
+</body>
